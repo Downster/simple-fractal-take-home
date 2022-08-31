@@ -5,7 +5,7 @@ The candidate is compared to candidates with the same title, that work at simila
 
 I chose to use a python backend (though not required) because we were provided a python code snippet in the instructions and python has built in modules for handling .csv files. I could have installed a package and just parsed the csv file using javascript on the frontend, but Flask is pretty easy to use and I think its more fun moving through the whole stack anyways!
 
-I hope you enjoy this little application, I got a little carried away with it!
+I hope you enjoy this application, I got a bit carried away with it!
 
 # Getting started
 
