@@ -30,21 +30,21 @@ flask run
 ```
 
 - Start Frontend
-Open a new terminal window in the root of the project
+* Open a new terminal window in the root of the project
 ```
 cd frontend
 npm start
 ```
 
 - Run backend tests
-While in the pipenv shell in the root directory of the project run:
+* While in the pipenv shell in the root directory of the project run:
 ```
 python -m unittest -v
 ```
 
 - Run frontend tests
-FIRST MAKE SURE THE BACKEND IS RUNNING, SEVERAL TESTS WILL FAIL IF THE BACKEND IS NOT RUNNING
-While in the frontend directory and not in the pipenv shell run:
+* FIRST MAKE SURE THE BACKEND IS RUNNING, SEVERAL TESTS WILL FAIL IF THE BACKEND IS NOT RUNNING
+* While in the frontend directory and not in the pipenv shell run:
 ```
 npm test
 ```
