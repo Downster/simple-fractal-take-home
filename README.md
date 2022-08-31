@@ -3,7 +3,7 @@
 This is an application that allows you to view a candidates percentile in coding and communication.
 The candidate is compared to candidates with the same title, that work at similar companies. This application utilizes React.js, react-hook-forms, tailwind.css and chart.js on the frontend and Flask/python on the backend. 
 
-I chose to use a python backend (though not required) because we were provided a python code snippet in the instructions and python has build in modules for handling .csv files. I could have installed a package and just parsed the csv file using javascript on the frontend, but Flask is pretty easy to use and I think its more fun moving through the whole stack anyways!
+I chose to use a python backend (though not required) because we were provided a python code snippet in the instructions and python has built in modules for handling .csv files. I could have installed a package and just parsed the csv file using javascript on the frontend, but Flask is pretty easy to use and I think its more fun moving through the whole stack anyways!
 
 I hope you enjoy this little application, I got a little carried away with it!
 
