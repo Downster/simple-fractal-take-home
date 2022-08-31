@@ -22,6 +22,7 @@ npm install
 ```
 3) Install backend dependencies
 ```
+cd ..
 cd app
 pipenv install
 ```
