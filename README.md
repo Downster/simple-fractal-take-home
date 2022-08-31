@@ -42,7 +42,7 @@ While in the pipenv shell in the root directory of the project run:
 python -m unittest -v
 ```
 
--Run frontend tests
+- Run frontend tests
 FIRST MAKE SURE THE BACKEND IS RUNNING, SEVERAL TESTS WILL FAIL IF THE BACKEND IS NOT RUNNING
 While in the frontend directory and not in the pipenv shell run:
 ```
