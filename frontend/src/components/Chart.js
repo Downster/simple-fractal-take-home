@@ -16,7 +16,15 @@ ChartJS.register(
     Tooltip,
     Legend
 );
-
+/**
+ * 
+ * @param {*} candidates
+ * an array of candidate objects
+ * @param {*} candidateIdx
+ * the index of the candidate being displayed 
+ * @returns 
+ * a JSX element (chart)
+ */
 
 function Chart({ candidates, candidateIdx }) {
     const labels = candidates.map((candidate) => `Candidate ${candidate.candidate_id}`)

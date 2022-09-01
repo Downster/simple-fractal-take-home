@@ -1,6 +1,14 @@
 import { useForm } from "react-hook-form";
 
+/**
+ * 
+ * @param {*} submit
+ * a submit handler passed down from its parent component 
+ * @returns a JSX element (form)
+ */
 function CandidateIdForm({ submit }) {
+
+    //I chose to use react hook forms here for the simple and elegant error handling
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = submit
 

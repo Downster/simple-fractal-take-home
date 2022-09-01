@@ -10,12 +10,26 @@ function App() {
   const [codingPercentile, setCodingPercentile] = useState('')
   const [communicationPercentile, setCommunicationPercentile] = useState('')
   const [error, setErrors] = useState('')
-
+  /**
+   * 
+   * @param {*} data
+   *  a data object with a key of candidateId
+   * 
+   * This functions fetches the coding and communication percentiles of the chosen candidate
+   * along with all of the other scores used to calculate the percentile
+   * and assigns them to their specific slice of state.
+   * 
+   * When the candidates state is updated, it causes the Chart.js component to be re-rendered with the 
+   * chosen candidate highligted in red and blue
+   */
   const getCandidateData = async (data) => {
     const { candidateId } = data
     const res = await fetch(`/percentile/${candidateId}`)
     if (res.ok) {
       const { scores, percentile } = await res.json()
+      //simple helper function to get the candidates position in the scores array
+      //since the graph data is mapped from the scores array it will be in the same position in the 
+      //graph data
       setCandidateIdx(getCandidateIndex(scores, candidateId))
       setCandidates(scores)
       setCodingPercentile(percentile.coding_percentile.toFixed(2))
