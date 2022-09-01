@@ -28,10 +28,6 @@ def build_candidate_object(id):
                 break
     return candidate
 
-
-
-
-
 def create_scores_array(id):
     """A function that takes in a candidate id, and returns an array with all of the other candidates with similar titles and at similar companies"""
     scores = []
@@ -40,7 +36,7 @@ def create_scores_array(id):
     with open('app/data/score-records.csv', mode='r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
-            #if the row has the same title as the candidate and they work at similar companies, build an object for this particular candidate
+            #if the row has the same title as the candidate and they work at similar companies, build an object for this particular candidate and add it to the scores array
             if row['title'] == candidate['title'] and are_similar(companies[row['company_id']], companies[candidate['company_id']]):
                 similar_candidate = {
                     'candidate_id': int(row['candidate_id']),
@@ -54,9 +50,12 @@ def create_scores_array(id):
 
 def calculate_percentile(id):
     """A function that takes a candidate_id and returns their percentile for their coding and commmunication score compared to other candidates at the same title and at similar companies"""
+    #formula: percentile = (number of scores below the chosen candidates score) / total amount of scores * 100
+    #to calculate the percentile the scores must be sorted in ascending order so we will sort the objects by coding score and communication score
     sorted_by_coding = sorted(create_scores_array(id), key= lambda item: item['coding_score'])
     sorted_by_communication = sorted(create_scores_array(id), key= lambda item: item['communication_score'])
     total_items = len(sorted_by_coding)
+    #indicies are zero indexed, which means if we get the index of the candidate, that is how many scores are below them
     coding_candidate_idx = next((i for i, item in enumerate(sorted_by_coding) if item['candidate_id'] == id), -1)
     communication_candidate_idx = next((i for i, item in enumerate(sorted_by_communication) if item['candidate_id'] == id), -1)
     return {'coding_percentile': coding_candidate_idx / total_items * 100, 'communication_percentile' : communication_candidate_idx / total_items * 100}

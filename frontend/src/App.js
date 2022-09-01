@@ -1,17 +1,7 @@
-import {
-  Chart as ChartJS,
-  RadialLinearScale,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 import { useState } from 'react';
 import Chart from './components/Chart';
 import CandidateIdForm from './components/CandidateIdForm';
 import getCandidateIndex from './utils/getCandidateIndex'
-ChartJS.register(
-  RadialLinearScale, ArcElement, Title, Tooltip, Legend);
 
 function App() {
 
