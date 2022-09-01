@@ -18,10 +18,23 @@ ChartJS.register(
 );
 
 
-function Chart({ candidates }) {
+function Chart({ candidates, candidateIdx }) {
     const labels = candidates.map((candidate) => `Candidate ${candidate.candidate_id}`)
+    const codingBackgroundColors = new Array(candidates.length).fill('grey')
+    const codingBorderColors = new Array(candidates.length).fill('darkgrey')
+    const communicationBorderColors = new Array(candidates.length).fill('black')
+    const communicationBackgroundColors = new Array(candidates.length).fill('black')
+    codingBackgroundColors[candidateIdx] = 'rgba(255, 99, 132, 0.5)'
+    codingBorderColors[candidateIdx] = 'rgb(255, 99, 132)'
+    communicationBackgroundColors[candidateIdx] = 'rgba(53, 162, 235, 0.5)'
+    communicationBorderColors[candidateIdx] = 'rgb(53, 162, 235)'
 
     const options = {
+        elements: {
+            bar: {
+                borderWidth: 2,
+            },
+        },
         responsive: true,
         interaction: {
             mode: 'index',
@@ -42,20 +55,24 @@ function Chart({ candidates }) {
             {
                 label: 'Coding Score',
                 data: candidates.map((candidate) => candidate.coding_score),
-                backgroundColor: new Array(candidates.length).fill('rgba(255, 99, 132, 0.5)')
+                borderColor: codingBorderColors,
+                backgroundColor: codingBackgroundColors
             },
             {
                 label: 'Communication Score',
                 data: candidates.map((candidate) => candidate.communication_score),
-                backgroundColor: 'rgba(53, 162, 235, 0.5)'
+                borderColor: communicationBorderColors,
+                backgroundColor: communicationBackgroundColors
             },
         ],
     };
 
+    console.log('rerender')
+
 
 
     return (
-        <div className=''>
+        <div>
             <Bar options={options} data={data} />
         </div>
     )

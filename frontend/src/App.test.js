@@ -55,3 +55,17 @@ test('fetching candidate 912 returns a coding percentile result of 74.19 and com
   expect(percentile.coding_percentile.toFixed(2)).toEqual('74.19')
   expect(percentile.communication_percentile.toFixed(2)).toEqual('87.10')
 })
+
+test('fetching candidate 889 returns a list of 31 people', async () => {
+  render(<App />);
+  const res = await fetch(`/percentile/925`)
+  const { scores } = await res.json()
+  expect(scores.length).toEqual(31)
+})
+
+test('fetching candidate 902 returns a list of 14 people', async () => {
+  render(<App />);
+  const res = await fetch(`/percentile/902`)
+  const { scores } = await res.json()
+  expect(scores.length).toEqual(14)
+})
