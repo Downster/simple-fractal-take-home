@@ -14,7 +14,7 @@ I hope you enjoy this application, I got a bit carried away with it!
 # API Routes
 
 * GET percentiles/:candidate_id
-  * This route is called with a specific candidates id and returns a dictionart containing two keys percentile and scores, scores is an array of candidate objects used to create a chart containing all of the similar candidates scores and percentile is a dictionary containing two keys, coding_percentile and communication_percentile which contain the corresponding percentiles
+  * This route is called with a specific candidates id and returns a dictionary containing two keys 'percentile' and 'scores', the scores key containes an array of candidate objects used to create a chart containing all of the similar candidates scores and the percentile key contains a dictionary containing two keys, coding_percentile and communication_percentile which reference the corresponding percentiles
 
 
 # Getting started
