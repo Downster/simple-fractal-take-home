@@ -17,12 +17,12 @@ ChartJS.register(
     Legend
 );
 /**
- * 
+ *
  * @param {*} candidates
  * an array of candidate objects
  * @param {*} candidateIdx
- * the index of the candidate being displayed 
- * @returns 
+ * the index of the candidate being displayed
+ * @returns
  * a JSX element (chart)
  */
 
@@ -52,7 +52,7 @@ function Chart({ candidates, candidateIdx }) {
         plugins: {
             title: {
                 display: true,
-                text: 'Coding and Communication scores of candidates with the same title at similar companies',
+                text: 'Graph of coding and communication scores of candidates with the same title at similar companies',
             },
         },
     };

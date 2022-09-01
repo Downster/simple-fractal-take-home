@@ -11,15 +11,15 @@ function App() {
   const [communicationPercentile, setCommunicationPercentile] = useState('')
   const [error, setErrors] = useState('')
   /**
-   * 
+   *
    * @param {*} data
    *  a data object with a key of candidateId
-   * 
+   *
    * This functions fetches the coding and communication percentiles of the chosen candidate
    * along with all of the other scores used to calculate the percentile
    * and assigns them to their specific slice of state.
-   * 
-   * When the candidates state is updated, it causes the Chart.js component to be re-rendered with the 
+   *
+   * When the candidates state is updated, it causes the Chart.js component to be re-rendered with the
    * chosen candidate highligted in red and blue
    */
   const getCandidateData = async (data) => {
@@ -28,7 +28,7 @@ function App() {
     if (res.ok) {
       const { scores, percentile } = await res.json()
       //simple helper function to get the candidates position in the scores array
-      //since the graph data is mapped from the scores array it will be in the same position in the 
+      //since the graph data is mapped from the scores array it will be in the same position in the
       //graph data
       setCandidateIdx(getCandidateIndex(scores, candidateId))
       setCandidates(scores)
@@ -46,9 +46,9 @@ function App() {
     <div className='flex flex-col'>
       {error && <p>{error}</p>}
       <div className='flex flex-col items-center'>
-        <p className='pt-2'>Coding percentile: {codingPercentile}</p>
-        <p className='pt-2'>Communication percentile: {communicationPercentile}</p>
         <CandidateIdForm submit={getCandidateData} />
+        <p className='pt-2'>Candidate coding percentile: {codingPercentile}</p>
+        <p className='pt-2'>Candidate communication percentile: {communicationPercentile}</p>
       </div>
       <Chart candidates={candidates} candidateIdx={candidateIdx} />
     </div>
