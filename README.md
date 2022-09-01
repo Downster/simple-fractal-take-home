@@ -16,11 +16,13 @@ git clone git@github.com:Downster/simple-fractal-take-home.git
 
 
 2) Install frontend dependencies
+* Change directories into the frontend folder and run npm install
 ``` 
 cd frontend 
 npm install
 ```
 3) Install backend dependencies
+* Change directories back into the root folder and then into the app folder. Run pipenv install
 ```
 cd ..
 cd app
@@ -28,6 +30,7 @@ pipenv install
 ```
 
 4) Start Virtual Env for backend and start backend
+* Start pipenv then change back to the root directory while in the virtual env shell and run flask run
 ```
 pipenv shell
 cd ..
